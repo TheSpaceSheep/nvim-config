@@ -5,22 +5,38 @@ local avante = require("avante")
 avante.setup({
 	---@alias Provider "openrouter" | "aihubmix" | "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 	provider = "openrouter", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
-	aihubmix = {
-		__inherited_from = "openai",
-		endpoint = "https://aihubmix.com/v1",
-		model = "google/gemini-2.0-flash-exp:free",
-		api_key_name = "AIHUBMIX_API_KEY",
-	},
 	-- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
 	-- currently designating it as `copilot` provider is dangerous because: https://github.com/yetone/avante.nvim/issues/1048
 	-- Of course, you can reduce the request frequency by increasing `suggestion.debounce`.
 	auto_suggestions_provider = "openrouter",
 	cursor_applying_provider = "groq", -- The provider used in the applying phase of Cursor Planning Mode, defaults to nil, when nil uses Config.provider as the provider for the applying phase
-	claude = {
-		endpoint = "https://api.anthropic.com",
-		model = "claude-3-5-sonnet-20241022",
-		temperature = 0,
-		max_tokens = 4096,
+	providers = {
+		aihubmix = {
+			__inherited_from = "openai",
+			endpoint = "https://aihubmix.com/v1",
+			model = "google/gemini-2.0-flash-exp:free",
+			api_key_name = "AIHUBMIX_API_KEY",
+		},
+		claude = {
+			endpoint = "https://api.anthropic.com",
+			model = "claude-3-5-sonnet-20241022",
+			extra_request_body = {
+				temperature = 0,
+				max_tokens = 4096,
+			},
+		},
+		openrouter = {
+			__inherited_from = "openai",
+			endpoint = "https://openrouter.ai/api/v1",
+			api_key_name = "OPENROUTER_API_KEY",
+			model = "openai/gpt-4o-mini",
+		},
+		groq = {
+			__inherited_from = "openai",
+			api_key_name = "GROQ_API_KEY",
+			endpoint = "https://api.groq.com/openai/v1/",
+			model = "llama-3.1-70b-versatile",
+		},
 	},
 	---Specify the special dual_boost mode
 	---1. enabled: Whether to enable dual_boost mode. Default to false.
@@ -123,20 +139,6 @@ avante.setup({
 		diff = {
 			current = "DiffText",
 			incoming = "DiffAdd",
-		},
-	},
-	vendors = {
-		openrouter = {
-			__inherited_from = "openai",
-			endpoint = "https://openrouter.ai/api/v1",
-			api_key_name = "OPENROUTER_API_KEY",
-			model = "anthropic/claude-3.7-sonnet",
-		},
-		groq = {
-			__inherited_from = "openai",
-			api_key_name = "GROQ_API_KEY",
-			endpoint = "https://api.groq.com/openai/v1/",
-			model = "llama-3.1-70b-versatile",
 		},
 	},
 
