@@ -1,0 +1,26 @@
+-- require("codeium").setup({
+-- 	enable_cmp_source = false,
+-- 	enable_chat = true,
+-- 	virtual_text = {
+-- 		enabled = true,
+-- 		manual = true,
+-- 		filetypes = {},
+-- 		default_filetype_enabled = true,
+-- 		idle_delay = 75,
+-- 		virtual_text_priority = 65535,
+-- 		map_keys = true,
+-- 		-- accept_fallback = nil, -- <== try removing this
+-- 		key_bindings = {
+-- 			accept = "<leader><Tab>",
+-- 			accept_word = "<leader>w<Tab>",
+-- 			accept_line = "<leader>l<Tab>",
+-- 			clear = nil, -- <== safer fallback
+-- 			next = "<leader>m",
+-- 			prev = "<leader>M",
+-- 		},
+-- 	},
+-- })
+--
+-- vim.keymap.set("i", "<leader>m", function()
+-- 	require("codeium.virtual_text").cycle_or_complete()
+-- end)
