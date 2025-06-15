@@ -44,27 +44,98 @@ return require("packer").startup(function(use)
 	})
 
 	-- Required plugins
-	use("nvim-treesitter/nvim-treesitter")
 	use("stevearc/dressing.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("MunifTanjim/nui.nvim")
 	use("MeanderingProgrammer/render-markdown.nvim")
 
 	-- Optional dependencies
-	use("hrsh7th/nvim-cmp")
 	use("nvim-tree/nvim-web-devicons") -- or use 'echasnovski/mini.icons'
 	use("HakonHarnes/img-clip.nvim")
-	use("zbirenbaum/copilot.lua")
 
-	-- Avante.nvim with build process
+	-- use({
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({
+	-- 			keymaps = {
+	-- 				accept_suggestion = "<Tab>",
+	-- 				clear_suggestion = "<C-]>",
+	-- 				accept_word = "<C-j>",
+	-- 			},
+	-- 			ignore_filetypes = { cpp = true }, -- or { "cpp", }
+	-- 			color = {
+	-- 				suggestion_color = "#ffffff",
+	-- 				cterm = 244,
+	-- 			},
+	-- 			log_level = "info", -- set to "off" to disable logging completely
+	-- 			disable_inline_completion = false, -- disables inline completion for use with cmp
+	-- 			disable_keymaps = false, -- disables built in keymaps for more manual control
+	-- 			condition = function()
+	-- 				return true
+	-- 			end, -- condition to check for stopping supermaven, `true` means to stop supermaven when the condition is true.
+	-- 		})
+	-- 	end,
+	-- })
 	use({
-		"yetone/avante.nvim",
-		branch = "main",
-		run = "make",
+		"Exafunction/windsurf.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
 		config = function()
-			require("avante").setup()
+			require("codeium").setup({
+				enable_cmp_source = false,
+				virtual_text = {
+					enabled = false,
+
+					-- These are the defaults
+
+					-- Set to true if you never want completions to be shown automatically.
+					manual = true,
+					-- A mapping of filetype to true or false, to enable virtual text.
+					filetypes = {},
+					-- Whether to enable virtual text of not for filetypes not specifically listed above.
+					default_filetype_enabled = true,
+					-- How long to wait (in ms) before requesting completions after typing stops.
+					idle_delay = 75,
+					-- Priority of the virtual text. This usually ensures that the completions appear on top of
+					-- other plugins that also add virtual text, such as LSP inlay hints, but can be modified if
+					-- desired.
+					virtual_text_priority = 65535,
+					-- Set to false to disable all key bindings for managing completions.
+					map_keys = true,
+					-- The key to press when hitting the accept keybinding but no completion is showing.
+					-- Defaults to \t normally or <c-n> when a popup is showing.
+					accept_fallback = nil,
+					-- Key bindings for managing completions in virtual text mode.
+					key_bindings = {
+						-- Accept the current completion.
+						accept = "<Tab>",
+						-- Accept the next word.
+						accept_word = false,
+						-- Accept the next line.
+						accept_line = false,
+						-- Clear the virtual text.
+						clear = false,
+						-- Cycle to the next completion.
+						next = "<M-]>",
+						-- Cycle to the previous completion.
+						prev = "<M-[>",
+					},
+				},
+			})
 		end,
 	})
+
+	-- Avante.nvim with build process
+	-- use({
+	-- 	"yetone/avante.nvim",
+	-- 	branch = "main",
+	-- 	run = "make",
+	-- 	config = function()
+	-- 		require("avante").setup()
+	-- 	end,
+	-- })
 	use({
 		"stevearc/oil.nvim",
 		config = function()
@@ -101,7 +172,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({ "mfussenegger/nvim-lint" })
-	use({ "Exafunction/windsurf.vim" })
 	use({
 		"folke/noice.nvim",
 		event = "VimEnter",
@@ -146,5 +216,63 @@ return require("packer").startup(function(use)
 			{ "MunifTanjim/nui.nvim" },
 			{ "rcarriga/nvim-notify", opt = true },
 		},
+	})
+	use({
+		"olimorris/codecompanion.nvim",
+		config = function()
+			require("codecompanion").setup({
+				strategies = {
+					chat = {
+						adapter = "openrouter",
+					},
+					inline = {
+						adapter = "openrouter",
+					},
+				},
+				adapters = {
+					openrouter = function()
+						return require("codecompanion.adapters").extend("openai_compatible", {
+							env = {
+								url = "https://openrouter.ai/api",
+								api_key = "OPENROUTER_API_KEY",
+								chat_url = "/v1/chat/completions",
+							},
+							schema = {
+								model = {
+									default = "google/gemini-2.5-flash-preview-05-20",
+								},
+							},
+						})
+					end,
+				},
+			})
+		end,
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	})
+	use({
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({
+				keymaps = {
+					accept_suggestion = "<leader><Tab>",
+					clear_suggestion = "<leader>j",
+					accept_word = "<leader>l",
+				},
+				ignore_filetypes = { cpp = true }, -- or { "cpp", }
+				color = {
+					suggestion_color = "#ffffff",
+					cterm = 244,
+				},
+				log_level = "info", -- set to "off" to disable logging completely
+				disable_inline_completion = false, -- disables inline completion for use with cmp
+				disable_keymaps = false, -- disables built in keymaps for more manual control
+				condition = function()
+					return false
+				end, -- condition to check for stopping supermaven, `true` means to stop supermaven when the condition is true.
+			})
+		end,
 	})
 end)

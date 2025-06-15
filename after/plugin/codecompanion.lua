@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>ae", ":CodeCompanion<CR>", { desc = "CodeCompanion" })
+vim.keymap.set("v", "<leader>ae", ":CodeCompanion<CR>", { desc = "CodeCompanion" })
+vim.keymap.set("n", "<leader>aa", ":CodeCompanionChat Toggle<CR>", { desc = "CodeCompanion Chat Toggle" })
+vim.keymap.set("n", "<leader>ac", ":CodeCompanionCmd<CR>", { desc = "CodeCompanion Cmd" })
+vim.keymap.set("n", "<leader>ad", ":CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" })

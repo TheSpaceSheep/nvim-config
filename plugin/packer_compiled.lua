@@ -87,27 +87,22 @@ _G.packer_plugins = {
     path = "/home/noe/.local/share/nvim/site/pack/packer/opt/alternate-toggler",
     url = "https://github.com/rmagatti/alternate-toggler"
   },
-  ["avante.nvim"] = {
-    config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vavante\frequire\0" },
-    loaded = true,
-    path = "/home/noe/.local/share/nvim/site/pack/packer/start/avante.nvim",
-    url = "https://github.com/yetone/avante.nvim"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/noe/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["codecompanion.nvim"] = {
+    config = { "\27LJ\2\n©\2\0\0\6\0\v\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\b\0005\5\a\0=\5\t\4=\4\n\3D\0\3\0\vschema\nmodel\1\0\1\nmodel\0\1\0\1\fdefault*google/gemini-2.5-flash-preview-05-20\benv\1\0\2\vschema\0\benv\0\1\0\3\rchat_url\25/v1/chat/completions\burl\30https://openrouter.ai/api\fapi_key\23OPENROUTER_API_KEY\22openai_compatible\vextend\27codecompanion.adapters\frequireø\1\1\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3=\3\t\0025\3\v\0003\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\radapters\15openrouter\1\0\1\15openrouter\0\0\15strategies\1\0\2\15strategies\0\radapters\0\vinline\1\0\1\fadapter\15openrouter\tchat\1\0\2\vinline\0\tchat\0\1\0\1\fadapter\15openrouter\nsetup\18codecompanion\frequire\0" },
+    loaded = true,
+    path = "/home/noe/.local/share/nvim/site/pack/packer/start/codecompanion.nvim",
+    url = "https://github.com/olimorris/codecompanion.nvim"
   },
   ["conform.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0" },
     loaded = true,
     path = "/home/noe/.local/share/nvim/site/pack/packer/start/conform.nvim",
     url = "https://github.com/stevearc/conform.nvim"
-  },
-  ["copilot.lua"] = {
-    loaded = true,
-    path = "/home/noe/.local/share/nvim/site/pack/packer/start/copilot.lua",
-    url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -135,7 +130,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["noice.nvim"] = {
-    config = { "\27LJ\2\n—\5\0\0\6\0\25\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\n\0004\4\0\0=\4\v\0034\4\0\0=\4\f\0034\4\0\0=\4\r\0034\4\0\0=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0034\4\0\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0035\4\21\0005\5\20\0=\5\22\4=\4\23\3=\3\24\2B\0\2\1K\0\1\0\nviews\npopup\rposition\1\0\1\rposition\0\1\0\2\brow\3\0\bcol\t100%\18cmdline_popup\19cmdline_output\14popupmenu\nhover\fconfirm\rmessages\fcmdline\tmini\vnotify\1\0\n\nhover\0\fconfirm\0\rmessages\0\fcmdline\0\tmini\0\vnotify\0\npopup\0\18cmdline_popup\0\19cmdline_output\0\14popupmenu\0\fpresets\1\0\5\26long_message_to_split\2\20command_palette\2\18bottom_search\2\19lsp_doc_border\1\15inc_rename\1\blsp\1\0\3\nviews\0\blsp\0\fpresets\0\roverride\1\0\1\roverride\0\1\0\3 cmp.entry.get_documentation\2\"vim.lsp.util.stylize_markdown\0021vim.lsp.util.convert_input_to_markdown_lines\2\nsetup\nnoice\frequire\0" },
+    config = { "\27LJ\2\n—\5\0\0\6\0\25\0%6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\0025\3\b\0=\3\t\0025\3\n\0004\4\0\0=\4\v\0034\4\0\0=\4\f\0034\4\0\0=\4\r\0034\4\0\0=\4\14\0034\4\0\0=\4\15\0034\4\0\0=\4\16\0034\4\0\0=\4\17\0034\4\0\0=\4\18\0034\4\0\0=\4\19\0035\4\21\0005\5\20\0=\5\22\4=\4\23\3=\3\24\2B\0\2\1K\0\1\0\nviews\npopup\rposition\1\0\1\rposition\0\1\0\2\brow\3\0\bcol\t100%\18cmdline_popup\19cmdline_output\14popupmenu\nhover\fconfirm\rmessages\fcmdline\tmini\vnotify\1\0\n\fcmdline\0\npopup\0\18cmdline_popup\0\19cmdline_output\0\14popupmenu\0\nhover\0\fconfirm\0\rmessages\0\vnotify\0\tmini\0\fpresets\1\0\5\18bottom_search\2\19lsp_doc_border\1\15inc_rename\1\26long_message_to_split\2\20command_palette\2\blsp\1\0\3\nviews\0\fpresets\0\blsp\0\roverride\1\0\1\roverride\0\1\0\0031vim.lsp.util.convert_input_to_markdown_lines\2 cmp.entry.get_documentation\2\"vim.lsp.util.stylize_markdown\2\nsetup\nnoice\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -209,6 +204,12 @@ _G.packer_plugins = {
     path = "/home/noe/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["supermaven-nvim"] = {
+    config = { "\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0÷\2\1\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0023\3\n\0=\3\v\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\21ignore_filetypes\1\0\1\bcpp\2\fkeymaps\1\0\a\20disable_keymaps\1\fkeymaps\0\ncolor\0\14condition\0\21ignore_filetypes\0\30disable_inline_completion\1\14log_level\tinfo\1\0\3\22accept_suggestion\18<leader><Tab>\16accept_word\14<leader>l\21clear_suggestion\14<leader>j\nsetup\20supermaven-nvim\frequire\0" },
+    loaded = true,
+    path = "/home/noe/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
+    url = "https://github.com/supermaven-inc/supermaven-nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/noe/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -224,14 +225,23 @@ _G.packer_plugins = {
     path = "/home/noe/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["windsurf.vim"] = {
+  ["windsurf.nvim"] = {
+    config = { "\27LJ\2\né\2\0\0\5\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0004\4\0\0=\4\5\0035\4\6\0=\4\a\3=\3\b\2B\0\2\1K\0\1\0\17virtual_text\17key_bindings\1\0\6\16accept_line\1\16accept_word\1\vaccept\n<Tab>\tnext\n<M-]>\tprev\n<M-[>\nclear\1\14filetypes\1\0\t\14filetypes\0\vmanual\2\fenabled\1\17key_bindings\0\20accept_fallback\0\rmap_keys\2\26virtual_text_priority\3ÿÿ\3\15idle_delay\3K\29default_filetype_enabled\2\1\0\2\22enable_cmp_source\1\17virtual_text\0\nsetup\fcodeium\frequire\0" },
     loaded = true,
-    path = "/home/noe/.local/share/nvim/site/pack/packer/start/windsurf.vim",
-    url = "https://github.com/Exafunction/windsurf.vim"
+    path = "/home/noe/.local/share/nvim/site/pack/packer/start/windsurf.nvim",
+    url = "https://github.com/Exafunction/windsurf.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: codecompanion.nvim
+time([[Config for codecompanion.nvim]], true)
+try_loadstring("\27LJ\2\n©\2\0\0\6\0\v\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0005\3\5\0005\4\4\0=\4\6\0035\4\b\0005\5\a\0=\5\t\4=\4\n\3D\0\3\0\vschema\nmodel\1\0\1\nmodel\0\1\0\1\fdefault*google/gemini-2.5-flash-preview-05-20\benv\1\0\2\vschema\0\benv\0\1\0\3\rchat_url\25/v1/chat/completions\burl\30https://openrouter.ai/api\fapi_key\23OPENROUTER_API_KEY\22openai_compatible\vextend\27codecompanion.adapters\frequireø\1\1\0\5\0\14\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\4\0005\4\3\0=\4\5\0035\4\6\0=\4\a\3=\3\t\0025\3\v\0003\4\n\0=\4\f\3=\3\r\2B\0\2\1K\0\1\0\radapters\15openrouter\1\0\1\15openrouter\0\0\15strategies\1\0\2\15strategies\0\radapters\0\vinline\1\0\1\fadapter\15openrouter\tchat\1\0\2\vinline\0\tchat\0\1\0\1\fadapter\15openrouter\nsetup\18codecompanion\frequire\0", "config", "codecompanion.nvim")
+time([[Config for codecompanion.nvim]], false)
+-- Config for: windsurf.nvim
+time([[Config for windsurf.nvim]], true)
+try_loadstring("\27LJ\2\né\2\0\0\5\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0004\4\0\0=\4\5\0035\4\6\0=\4\a\3=\3\b\2B\0\2\1K\0\1\0\17virtual_text\17key_bindings\1\0\6\16accept_line\1\16accept_word\1\vaccept\n<Tab>\tnext\n<M-]>\tprev\n<M-[>\nclear\1\14filetypes\1\0\t\14filetypes\0\vmanual\2\fenabled\1\17key_bindings\0\20accept_fallback\0\rmap_keys\2\26virtual_text_priority\3ÿÿ\3\15idle_delay\3K\29default_filetype_enabled\2\1\0\2\22enable_cmp_source\1\17virtual_text\0\nsetup\fcodeium\frequire\0", "config", "windsurf.nvim")
+time([[Config for windsurf.nvim]], false)
 -- Config for: oil.nvim
 time([[Config for oil.nvim]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
@@ -240,16 +250,16 @@ time([[Config for oil.nvim]], false)
 time([[Config for conform.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fconform\frequire\0", "config", "conform.nvim")
 time([[Config for conform.nvim]], false)
--- Config for: avante.nvim
-time([[Config for avante.nvim]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vavante\frequire\0", "config", "avante.nvim")
-time([[Config for avante.nvim]], false)
+-- Config for: supermaven-nvim
+time([[Config for supermaven-nvim]], true)
+try_loadstring("\27LJ\2\n\15\0\0\1\0\0\0\2+\0\1\0L\0\2\0÷\2\1\0\4\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\0023\3\n\0=\3\v\2B\0\2\1K\0\1\0\14condition\0\ncolor\1\0\2\ncterm\3ô\1\21suggestion_color\f#ffffff\21ignore_filetypes\1\0\1\bcpp\2\fkeymaps\1\0\a\20disable_keymaps\1\fkeymaps\0\ncolor\0\14condition\0\21ignore_filetypes\0\30disable_inline_completion\1\14log_level\tinfo\1\0\3\22accept_suggestion\18<leader><Tab>\16accept_word\14<leader>l\21clear_suggestion\14<leader>j\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
+time([[Config for supermaven-nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'noice.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'alternate-toggler'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'noice.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

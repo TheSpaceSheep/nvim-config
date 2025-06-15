@@ -77,12 +77,11 @@ vim.keymap.set("i", "þ", "9")
 
 vim.keymap.set("n", "<leader><Tab>", ":NvimTreeToggle<CR>")
 
-vim.keymap.set("i", "<leader>m", function()
-	return vim.fn["codeium#CycleOrComplete"]()
-end, { expr = true, silent = true })
-vim.keymap.set("i", "<leader><Tab>", function()
-	return vim.fn["codeium#Accept"]()
-end, { expr = true, silent = true })
+-- Supermaven keymaps
 vim.keymap.set("i", "<leader>M", function()
-	return vim.fn["codeium#CycleCompletions"](-1)
-end, { expr = true, silent = true })
+	-- Trigger completion by sending InsertCharPre event
+	vim.api.nvim_exec_autocmds("User", { pattern = "SupermavenTriggerCompletion" })
+	-- Alternative: simulate text change to trigger completion
+	local pos = vim.api.nvim_win_get_cursor(0)
+	vim.api.nvim_buf_set_text(0, pos[1]-1, pos[2], pos[1]-1, pos[2], {""})
+end, { silent = true })
